@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ job.denomination }}{% endblock %}
+
+{% block body %}
+
+    <h2>{{ job.entreprise }}</h2>
+    <section class='enteteJob'>
+        <div class='zoneText'>
+            <p>{{ job.contrat ~ ' - ' ~ job.lieu ~ ' - ' ~ job.pays}}</p>
+            <hr>
+            <h2>{{ job.denomination }}</h2>
+            <hr>
+        </div>
+        <div class='zoneImg'>
+            <img src='images/{{ job.logo }}'>
+        </div>
+    </section>
+    <p> {{ job.description }}</p>
+    <p> {{ job.postuler }}</p>
+{% endblock %}

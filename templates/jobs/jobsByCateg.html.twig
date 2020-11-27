@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JobsController!{% endblock %}
+
+{% block body %}
+        <h2> Jobs pour la categorie {{ cat }}</h2>
+            {% for job in jobs %}
+                <div class='jobCard'>
+                        <div class='imgCard'>
+                            <img src='images/{{ job.logo }}'>
+                        </div>
+                        <div class='txtCard'>
+                            <p>{{ job.entreprise }}</p>
+                            <p>{{ job.contrat }}</p>
+                            <p>{{ job.lieu }}</p>
+                        </div>
+                    </div>
+            {% endfor %}
+            {{ knp_pagination_render(jobs) }}
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publier une offre{% endblock %}
+
+{% block body %}
+    <h2>Poster un Job</h2>
+
+    <form action='/createJob' method='POST' enctype="multipart/form-data">
+        <p>
+            <label for='cat'>Catégorie</label>
+            <select name='cat'>
+                <option value=''>--Choisir Catégorie--</option>
+                {% for cat in categs %}
+                <option value='{{ cat.id }}'>{{ cat.nom }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for='contrat'>Contrat</label>
+                <input type='radio' value='CDD' name='contrat'>CDD
+                <input type='radio' value='CDI' name='contrat'>CDI
+                <input type='radio' value='stage' name='contrat'>Stage
+        </p>
+        <p>
+            <label for='entreprise'>Entreprise</label>
+            <input type='text' name='entreprise' required>
+        </p>
+        <p>
+            <label for='logo'>Logo</label>
+            <input type='file' name='logo' required>
+        </p>
+        <p>
+            <label for='URL'>URL</label>
+            <input type='text' name='URL' required>
+        </p>
+        <p>
+            <label for='ville'>Ville</label>
+            <input type='text' name='ville' required>
+        </p>
+        <p>
+            <label for='pays'>Pays</label>
+            <input type='text' name='pays' required>
+        </p>
+        <p>
+            <label for='mail'>Email</label>
+            <input type='text' name='mail' required>
+        </p>
+        <p>
+            <label for='denomination'>Intitulé Poste</label>
+            <input type='text' name='denomination' required>
+        </p>
+        <p>
+            <label for='desc'>Description</label>
+            <textarea name='desc' row='4' cols='30' required>
+            </textarea>
+        </p>
+        <p>
+            <label for='postuler'>Infos postulant</label>
+            <textarea name='postuler' row='4' cols='30' required>
+            </textarea>
+        </p>
+        <input type='submit' value="Poster l'annonce">
+    </form>
+  
+{% endblock %}

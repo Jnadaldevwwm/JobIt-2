@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rechercher un Job{% endblock %}
+
+{% block body %}
+    <h2>Résultat de la recherche pour "{{ keys }}"</h2>
+    {% for job in jobs %}
+            <div class='jobCard'>
+                <div class='imgCard'>
+                    <img src='images/{{ job.logo }}'>
+                </div>
+                <div class='txtCard'>
+                    <p>{{ job.entreprise }}</p>
+                    <p>{{ job.contrat }}</p>
+                    <p>{{ job.lieu }}</p>
+                </div>
+            </div>
+    {% endfor %}
+{% endblock %}

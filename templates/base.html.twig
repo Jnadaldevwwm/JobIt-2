@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link href="css/style.css" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        <div id='boAcc'>
+            <section id='indLeft'>
+                <a href='/'><h1>Job-It</h1></a>
+                <form action='/searchJob' method='POST'>
+                    <div class='fakeInputText'>
+                        <img src='images/loupe.png' class='loupeImg'>
+                        <input type='text' name='recherche' placeholder='Développeur'>
+                        <input type='reset' value='X'>
+                    </div>
+                    <input type="submit" 
+                    style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                    tabindex="-1" />
+                </form>
+            {% block body %}{% endblock %}
+            </section>
+            <section id='indRight'>
+                <a href='/createForm'>
+                    <button> Poster un Job</button>
+                </a>
+            </section>
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+    <footer>
+        <nav>
+            <a href=''>A Propos</a>
+            <a href=''>Job-It API</a>
+            <a href='/affilies'>Partenaires</a>
+        </nav>
+    </footer>
+</html>

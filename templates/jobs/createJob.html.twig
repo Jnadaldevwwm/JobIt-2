@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publier une offre{% endblock %}
+
+{% block body %}
+<h2>Offre créée !</h2>
+<p> Votre offre pour "{{ job.denomination }}" a été créée<p>
+<p> Pour la modofier rendez vous à l'adresse : <a href='/modifJob?token={{ job.token }}'>/modifJob?token={{ job.token }} </a></p>
+{% endblock %}

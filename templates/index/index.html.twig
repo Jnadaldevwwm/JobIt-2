@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Job-It{% endblock %}
+
+{% block body %}
+
+        <div id='listeJobs'>
+                {% for cat in cats %}
+                    <div class='categContainer'>
+                    <a href='/categorie?nomCat={{ cat }}'><h2>{{ cat }}</h2></a>
+                    <hr>
+                        {% for job in jobs %}
+                            {% if job.categorieId.nom == cat %}
+                                <a href='/jobs?jobId={{ job.id }}' class='lienCard'>
+                                    <div class='jobCard'>
+                                        <div class='imgCard'>
+                                            <img src='images/{{ job.logo }}'>
+                                        </div>
+                                        <div class='txtCard'>
+                                            <p>{{ job.entreprise }}</p>
+                                            <p class='denom'>{{ job.denomination }}</p>
+                                            <p>{{ job.contrat }} {{ job.lieu }}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+        </div>
+    
+{% endblock %}

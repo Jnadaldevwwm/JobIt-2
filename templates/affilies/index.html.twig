@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Partenaires{% endblock %}
+
+{% block body %}
+    <form action='/affiliesconfirm' method='POST' id='formPartn'>
+        <h2>Devenir Partenaire</h2>
+        <label for='nom'>Nom :</label>
+        <input type='text' name='nom' required>
+        <label for='email'>E-mail :</label>
+        <input type='mail' name='email' required>
+        <label for='site'>Site :</label>
+        <input type='text' name='site'>
+        <input type='submit' value='Envoyer' required>
+    </form>
+{% endblock %}
